@@ -105,11 +105,11 @@ def getUSBPrinter(commandSet='Generic'):
             if self._device is None:
                 raise RuntimeError("Cable isn't plugged in")
 
-            if self._device.is_kernel_driver_active(0):
-                try:
-                    self._device.detach_kernel_driver(0)
-                except usb.core.USBError as e:
-                    raise RuntimeError("Could not detach kernel driver: %s" % str(e))
+#             if self._device.is_kernel_driver_active(0):
+#                 try:
+#                     self._device.detach_kernel_driver(0)
+#                 except usb.core.USBError as e:
+#                     raise RuntimeError("Could not detach kernel driver: %s" % str(e))
 
             try:
                 self._device.set_configuration()
